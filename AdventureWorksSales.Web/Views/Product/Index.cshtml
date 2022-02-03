@@ -14,15 +14,15 @@
             <div class="row" style="padding:1rem">
                 @foreach (var item in Model.Products)
                 {
-                    <div class="col-md-4 col-xs-6" style="padding:0.7rem">
+                    <div class="col-md-4 col-xs-4" style="padding:0.7rem">
                         @Html.DisplayFor(i => item.Name)
                     </div>
 
-                    <div class="col-md-4 col-xs-6" style="padding:0.7rem">
+                    <div class="col-md-4 col-xs-4" style="padding:0.7rem">
                         @Html.DisplayFor(i => item.ProductNumber)
                     </div>
 
-                    <div class="col-md-4 col-xs-6" style="padding:0.7rem">
+                    <div class="col-md-4 col-xs-4" style="padding:0.7rem">
                         @Html.ActionLink("Make Order", "MakeOrder", new { id = item.Id })
                     </div>
                 }

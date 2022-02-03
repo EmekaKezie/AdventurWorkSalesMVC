@@ -139,7 +139,7 @@ namespace AdventureWorksSales.Web.Modules
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand(Sql.OrderProduct, con))
                     {
-                        cmd.Parameters.AddWithValue("@SalesOrderID", 12456);
+                        cmd.Parameters.AddWithValue("@SalesOrderID", Util.GenerateRandomNumber());
                         cmd.Parameters.AddWithValue("@OrderQty", model.Quantity);
                         cmd.Parameters.AddWithValue("@ProductID", ProductId);
                         cmd.Parameters.AddWithValue("@SpecialOfferID", model.SpecialOfferID);
