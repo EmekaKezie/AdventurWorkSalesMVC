@@ -11,7 +11,10 @@ namespace AdventureWorksSales.Web.Controllers
 {
     public class ProductCategoryController : Controller
     {
-        // GET: ProductCategory
+        /// <summary>
+        /// Get ProductCategory
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             ProductCategoryCollection categories = new ProductCategoryCollection();
@@ -30,32 +33,65 @@ namespace AdventureWorksSales.Web.Controllers
         }
 
 
-
-        public ActionResult NewCategory()
+        /// <summary>
+        /// ProductCategory
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public ActionResult Add(CreateProductCategory model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                bool ret = ProductCategoryModule.AddCategory();
-                try
+                if (ModelState.IsValid)
                 {
-                    if (ret)
+                    bool insert = ProductCategoryModule.AddCategory(model.CategoryName);
+                    if (insert)
                     {
-                        ViewBag["result"] = "Successfull";
-                    }
-                    else
-                    {
-                        ViewBag["result"] = "Failed";
+                        ViewBag.Message = "Submitted Successfully";
                     }
                 }
-                catch (Exception e)
-                {
 
-                    throw e;
-                }
+                return View();
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
+        public ActionResult Edit(string Id)
+        {
+            ProductCategoryObj obj = new ProductCategoryObj();
+
+            try
+            {
+                obj.ProductCategory = ProductCategoryModule.GetCategoryById(Id);
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
 
+            return View(obj);
+        }
 
-            return View();
+
+        [HttpPost]
+        public ActionResult Edit(string id, ProductCategoryObj model)
+        {
+            try
+            {
+                bool update = ProductCategoryModule.UpdateCategory(model.ProductCategory.Name, id);
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return RedirectToAction("Index");
         }
     }
 }

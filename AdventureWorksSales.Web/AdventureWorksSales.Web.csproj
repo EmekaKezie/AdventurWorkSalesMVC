@@ -122,14 +122,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductCategoryController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SalesOrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CreateProductCategory.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
     <Compile Include="Models\TotalSalesOrder.cs" />
+    <Compile Include="Models\UpdateCategory.cs" />
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="Modules\ProductCategoryModule.cs" />
+    <Compile Include="Modules\ProductModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\DBConn.cs" />
     <Compile Include="Utility\Sql.cs" />
@@ -169,7 +174,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ProductCategory\Index.cshtml" />
-    <Content Include="Views\ProductCategory\NewCategory.cshtml" />
+    <Content Include="Views\ProductCategory\Add.cshtml" />
+    <Content Include="Views\ProductCategory\Edit.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\SalesOrder\Index.cshtml" />
+    <Content Include="Views\Product\MakeOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

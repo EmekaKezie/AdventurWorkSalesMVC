@@ -7,8 +7,8 @@
     <ProjectGuid>{EFE0DC43-1B49-4B05-A884-D3ED1A4F1F39}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AdventureWorksSales.Core</RootNamespace>
-    <AssemblyName>AdventureWorksSales.Core</AssemblyName>
+    <RootNamespace>AdventureWorksSales.Web</RootNamespace>
+    <AssemblyName>AdventureWorksSales.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

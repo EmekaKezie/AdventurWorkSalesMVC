@@ -8,9 +8,12 @@ namespace AdventureWorksSales.Web.Utility
     public class Sql
     {
         #region PRODUCT CATEGORIES
-        public const string ProductCategories = "SELECT ProductCategoryID, Name, rowguid, ModifiedDate FROM ProductCategory";
-        public const string CreateProductCategory = "INSERT INTO ProductCategory(Name, rowguid, ModifiedDate) VALUES(@Name, @rowguid, @ModifiedDate)";
+        public const string GetCategories = "SELECT ProductCategoryID, Name, rowguid, ModifiedDate FROM ProductCategory";
+        public const string GetCategory = "SELECT Name, rowguid, ModifiedDate FROM ProductCategory WHERE rowguid =  @rowguid";
+        public const string CreateCategory = "INSERT INTO ProductCategory(Name, rowguid, ModifiedDate) VALUES(@Name, @rowguid, @ModifiedDate)";
+        public const string UpdateCategory = "UPDATE ProductCategory SET Name = @Name, ModifiedDate = @ModifiedDate WHERE rowguid = @rowguid";
         #endregion
+
 
         #region SALES ORDER
         public const string GetTotalSalesOrders = @"SELECT DISTINCT 
@@ -18,6 +21,12 @@ namespace AdventureWorksSales.Web.Utility
                                                  (SELECT MAX(LineTotal) FROM SalesOrder) HighestLineTotal, 
                                                  (SELECT SUM(OrderQty) FROM SalesOrder WHERE ProductID IN (SELECT ProductID FROM Product WHERE Name = @Name)) FrontBrakeSales 
                                                  FROM SalesOrder";
+        #endregion
+
+
+        #region PRODUCTS
+        public const string GetProducts = "SELECT ProductID, Name, ProductNumber, rowguid, ModifiedDate FROM Product";
+        public const string GetProduct = "SELECT ProductID, Name, ProductNumber, rowguid, ModifiedDate FROM Product WHERE rowguid = @rowguid";
         #endregion
     }
 }

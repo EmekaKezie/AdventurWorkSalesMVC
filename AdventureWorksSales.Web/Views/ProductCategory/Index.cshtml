@@ -4,20 +4,24 @@
     ViewBag.Title = "Product Categories";
 }
 
-<h2>Product Categories</h2>
 
 
-<div style="padding: 1rem 0 1rem 0">
-    <div>@Html.ActionLink("New Category", "NewCategory", "ProductCategory")</div>
-</div>
 
-<div>
+
+
+<div style="padding:1rem 0 1rem 0; margin-top:25px; overflow:hidden;">
+
+    <h3 class="form-group" style="margin-bottom:50px">Categories</h3>
+
+    <div style="margin-bottom:20px">@Html.ActionLink("Add Category", "Add", "ProductCategory")</div>
+
     @if (Model != null && Model.ProductCategories.Count > 0)
     {
-        <div>
+        <div class="row" style="padding:1rem">
             @foreach (var item in Model.ProductCategories)
             {
-                <div>@Html.DisplayFor(i => item.Name)</div>
+                <div class="col-md-6 col-xs-6" style="padding:0.7rem">@Html.DisplayFor(i => item.Name)</div>
+                <div  class="col-md-6 col-xs-6" style="padding:0.7rem">@Html.ActionLink("Edit", "Edit", new { id = item.UniqueId })</div>
             }
         </div>
     }

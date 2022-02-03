@@ -1,0 +1,36 @@
+﻿@model AdventureWorksSales.Web.Models.ProductList
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div style="padding:1rem 0 1rem 0; margin-top:25px; overflow:hidden;">
+    <h3 class="form-group" style="margin-bottom:50px">Products</h3>
+    <div style="margin-bottom:20px">@Html.ActionLink("Add Product", "Add", "ProductCategory")</div>
+
+    <div>
+        @if (Model != null && Model.Products.Count > 0)
+        {
+            <div class="row" style="padding:1rem">
+                @foreach (var item in Model.Products)
+                {
+                    <div class="col-md-4 col-xs-6" style="padding:0.7rem">
+                        @Html.DisplayFor(i => item.Name)
+                    </div>
+
+                    <div class="col-md-4 col-xs-6" style="padding:0.7rem">
+                        @Html.DisplayFor(i => item.ProductNumber)
+                    </div>
+
+                    <div class="col-md-4 col-xs-6" style="padding:0.7rem">
+                        @Html.ActionLink("Make Order", "MakeOrder", new { id = item.UniqueId })
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div>No Products</div>
+        }
+    </div>
+</div>

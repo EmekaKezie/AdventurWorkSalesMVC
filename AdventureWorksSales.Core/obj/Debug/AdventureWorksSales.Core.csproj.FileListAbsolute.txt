@@ -4,3 +4,9 @@ C:\Users\Oanyirah\source\repos\AdventureWorksSales\AdventureWorksSales.Core\obj\
 C:\Users\Oanyirah\source\repos\AdventureWorksSales\AdventureWorksSales.Core\obj\Debug\AdventureWorksSales.Core.csproj.CoreCompileInputs.cache
 C:\Users\Oanyirah\source\repos\AdventureWorksSales\AdventureWorksSales.Core\obj\Debug\AdventureWorksSales.Core.dll
 C:\Users\Oanyirah\source\repos\AdventureWorksSales\AdventureWorksSales.Core\obj\Debug\AdventureWorksSales.Core.pdb
+C:\Users\emeka\source\repos\AdventurWorkSalesMVC\AdventureWorksSales.Core\obj\Debug\AdventureWorksSales.Core.csprojAssemblyReference.cache
+C:\Users\emeka\source\repos\AdventurWorkSalesMVC\AdventureWorksSales.Core\obj\Debug\AdventureWorksSales.Core.csproj.CoreCompileInputs.cache
+C:\Users\emeka\source\repos\AdventurWorkSalesMVC\AdventureWorksSales.Core\bin\Debug\AdventureWorksSales.Web.dll
+C:\Users\emeka\source\repos\AdventurWorkSalesMVC\AdventureWorksSales.Core\bin\Debug\AdventureWorksSales.Web.pdb
+C:\Users\emeka\source\repos\AdventurWorkSalesMVC\AdventureWorksSales.Core\obj\Debug\AdventureWorksSales.Web.dll
+C:\Users\emeka\source\repos\AdventurWorkSalesMVC\AdventureWorksSales.Core\obj\Debug\AdventureWorksSales.Web.pdb
