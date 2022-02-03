@@ -1,0 +1,6 @@
+C:\Users\Oanyirah\source\repos\AdventureWorksSales\AdventureWorksSales.Core\bin\Debug\AdventureWorksSales.Core.dll
+C:\Users\Oanyirah\source\repos\AdventureWorksSales\AdventureWorksSales.Core\bin\Debug\AdventureWorksSales.Core.pdb
+C:\Users\Oanyirah\source\repos\AdventureWorksSales\AdventureWorksSales.Core\obj\Debug\AdventureWorksSales.Core.csprojAssemblyReference.cache
+C:\Users\Oanyirah\source\repos\AdventureWorksSales\AdventureWorksSales.Core\obj\Debug\AdventureWorksSales.Core.csproj.CoreCompileInputs.cache
+C:\Users\Oanyirah\source\repos\AdventureWorksSales\AdventureWorksSales.Core\obj\Debug\AdventureWorksSales.Core.dll
+C:\Users\Oanyirah\source\repos\AdventureWorksSales\AdventureWorksSales.Core\obj\Debug\AdventureWorksSales.Core.pdb

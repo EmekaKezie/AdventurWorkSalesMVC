@@ -1,0 +1,30 @@
+﻿@model AdventureWorksSales.Web.Models.ProductCategoryCollection
+
+@{
+    ViewBag.Title = "Product Categories";
+}
+
+<h2>Product Categories</h2>
+
+
+<div style="padding: 1rem 0 1rem 0">
+    <div>@Html.ActionLink("New Category", "NewCategory", "ProductCategory")</div>
+</div>
+
+<div>
+    @if (Model != null && Model.ProductCategories.Count > 0)
+    {
+        <div>
+            @foreach (var item in Model.ProductCategories)
+            {
+                <div>@Html.DisplayFor(i => item.Name)</div>
+            }
+        </div>
+    }
+    else
+    {
+        <div>No Category</div>
+    }
+
+</div>
+
