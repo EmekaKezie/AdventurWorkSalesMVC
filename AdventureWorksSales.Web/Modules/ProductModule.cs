@@ -50,7 +50,7 @@ namespace AdventureWorksSales.Web.Modules
 
 
 
-        public static Product GetProduct(string Id)
+        public static Product GetProduct(int Id)
         {
             Product data = new Product();
 
@@ -61,7 +61,7 @@ namespace AdventureWorksSales.Web.Modules
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand(Sql.GetProduct, con))
                     {
-                        cmd.Parameters.AddWithValue("@rowguid", Id);
+                        cmd.Parameters.AddWithValue("@ProductID", Id);
 
                         SqlDataReader i = cmd.ExecuteReader();
                         if (i.HasRows)
@@ -84,6 +84,84 @@ namespace AdventureWorksSales.Web.Modules
             }
             catch (Exception e)
             {
+                throw new Exception(e.Message);
+            }
+
+            return data;
+        }
+
+
+        public static ProductOrder GetProductForOrder(int Id)
+        {
+            ProductOrder data = new ProductOrder();
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Connection()))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand(Sql.GetProduct, con))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", Id);
+
+                        SqlDataReader i = cmd.ExecuteReader();
+                        if (i.HasRows)
+                        {
+                            while (i.Read())
+                            {
+                                data = new ProductOrder
+                                {
+                                    Name = i["Name"].ToString(),
+                                };
+                            }
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
+            return data;
+        }
+
+
+        public static bool OrderProduct(int ProductId, ProductOrder model)
+        {
+            bool data = false;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Connection()))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand(Sql.OrderProduct, con))
+                    {
+                        cmd.Parameters.AddWithValue("@SalesOrderID", 12456);
+                        cmd.Parameters.AddWithValue("@OrderQty", model.Quantity);
+                        cmd.Parameters.AddWithValue("@ProductID", ProductId);
+                        cmd.Parameters.AddWithValue("@SpecialOfferID", model.SpecialOfferID);
+                        cmd.Parameters.AddWithValue("@UnitPrice", model.UnitPrice);
+                        cmd.Parameters.AddWithValue("@UnitPriceDiscount", model.UnitPriceDiscount);
+                        cmd.Parameters.AddWithValue("@LineTotal", model.LineTotal);
+                        cmd.Parameters.AddWithValue("@rowguid", Guid.NewGuid().ToString());
+                        cmd.Parameters.AddWithValue("@ModifiedDate", DateTime.Now);
+
+                        int insert = cmd.ExecuteNonQuery();
+                        if (insert > 0)
+                        {
+                            data = true;
+                        }
+
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception e)
+            {
+
                 throw new Exception(e.Message);
             }
 

@@ -30,13 +30,13 @@ namespace AdventureWorksSales.Web.Controllers
         }
 
 
-        public ActionResult MakeOrder(string ProductId)
+        public ActionResult MakeOrder(int Id)
         {
-            ProductData productData = new ProductData();
+            ProductOrder productOrder = new ProductOrder();
 
             try
             {
-                productData.Product = ProductModule.GetProduct(ProductId);
+                productOrder = ProductModule.GetProductForOrder(Id);
             }
             catch (Exception)
             {
@@ -44,7 +44,24 @@ namespace AdventureWorksSales.Web.Controllers
                 throw;
             }
 
-            return View(productData);
+            return View(productOrder);
+        }
+
+
+        [HttpPost]
+        public ActionResult MakeOrder(int Id, ProductOrder model)
+        {
+            try
+            {
+                bool order = ProductModule.OrderProduct(Id, model);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

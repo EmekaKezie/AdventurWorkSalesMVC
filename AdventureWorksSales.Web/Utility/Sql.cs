@@ -25,8 +25,9 @@ namespace AdventureWorksSales.Web.Utility
 
 
         #region PRODUCTS
-        public const string GetProducts = "SELECT ProductID, Name, ProductNumber, rowguid, ModifiedDate FROM Product";
-        public const string GetProduct = "SELECT ProductID, Name, ProductNumber, rowguid, ModifiedDate FROM Product WHERE rowguid = @rowguid";
+        public const string GetProducts = "SELECT ProductID, Name, ProductNumber, rowguid, ModifiedDate FROM Product ORDER BY Name ASC";
+        public const string GetProduct = "SELECT ProductID, Name, ProductNumber, rowguid, ModifiedDate FROM Product WHERE ProductID = @ProductID";
+        public const string OrderProduct = "INSERT INTO SalesOrder (SalesOrderID, OrderQty, ProductID, SpecialOfferID, UnitPrice, UnitPriceDiscount, LineTotal, rowguid, ModifiedDate) VALUES (@SalesOrderID, @OrderQty, @ProductID, @SpecialOfferID, @UnitPrice, @UnitPriceDiscount, @LineTotal, @rowguid, @ModifiedDate)";
         #endregion
     }
 }
