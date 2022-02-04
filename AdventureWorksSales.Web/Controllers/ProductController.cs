@@ -10,10 +10,6 @@ namespace AdventureWorksSales.Web.Controllers
 {
     public class ProductController : Controller
     {
-        /// <summary>
-        /// Get Products
-        /// </summary>
-        /// <returns></returns>
         public ActionResult Index()
         {
             ProductList list = new ProductList();

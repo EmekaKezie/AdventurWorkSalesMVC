@@ -49,7 +49,6 @@ namespace AdventureWorksSales.Web.Modules
         }
 
 
-
         public static Product GetProduct(int Id)
         {
             Product data = new Product();

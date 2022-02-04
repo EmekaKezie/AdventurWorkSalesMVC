@@ -11,11 +11,6 @@ namespace AdventureWorksSales.Web.Modules
 {
     public class ProductCategoryModule : DBConn
     {
-
-        /// <summary>
-        /// Get Product Categories
-        /// </summary>
-        /// <returns></returns>
         public static List<ProductCategory> GetProductCategory()
         {
             List<ProductCategory> data = new List<ProductCategory>();
@@ -91,7 +86,6 @@ namespace AdventureWorksSales.Web.Modules
 
             return data;
         }
-
 
 
         public static bool AddCategory(string categoryName)

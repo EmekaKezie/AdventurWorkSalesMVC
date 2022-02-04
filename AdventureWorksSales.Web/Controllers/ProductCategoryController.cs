@@ -11,10 +11,7 @@ namespace AdventureWorksSales.Web.Controllers
 {
     public class ProductCategoryController : Controller
     {
-        /// <summary>
-        /// Get ProductCategory
-        /// </summary>
-        /// <returns></returns>
+        
         public ActionResult Index()
         {
             ProductCategoryCollection categories = new ProductCategoryCollection();
@@ -32,12 +29,7 @@ namespace AdventureWorksSales.Web.Controllers
             return View(categories);
         }
 
-
-        /// <summary>
-        /// ProductCategory
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
+      
         public ActionResult Add(CreateProductCategory model)
         {
             try
