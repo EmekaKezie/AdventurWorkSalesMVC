@@ -1,4 +1,4 @@
-﻿@model AdventureWorksSales.Web.Models.TotalSalesOrderCollection
+﻿@model AdventureWorksSales.Web.Models.TotalSalesOrder
 
 @{
     ViewBag.Title = "Home Page";
@@ -19,19 +19,19 @@
     <div class="col-md-4">
         <h2>Total orders</h2>
         <p class="sales">
-            @Model.TotalSalesOrder.TotalOrders.ToString("##,###")
+            @Model.TotalOrders.ToString("##,###")
         </p>
     </div>
     <div class="col-md-4">
         <h2>Highest line total</h2>
         <p class="sales">
-            @Model.TotalSalesOrder.HighestLineTotal.ToString("##,###")
+            @Model.HighestLineTotal.ToString("##,###")
         </p>
     </div>
     <div class="col-md-4">
         <h2>Front Brakes sales total</h2>
         <p class="sales">
-            @Model.TotalSalesOrder.FrontBrakeSalesTotal.ToString("##,###")
+            @Model.FrontBrakeSalesTotal.ToString("##,###")
         </p>
     </div>
 </div>

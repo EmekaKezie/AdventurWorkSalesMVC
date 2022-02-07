@@ -15,7 +15,7 @@ namespace AdventureWorksSales.Web.Controllers
         public ActionResult Index()
         {
             ProductCategoryCollection categories = new ProductCategoryCollection();
-
+            
             try
             {
                 categories.ProductCategories = ProductCategoryModule.GetProductCategory();

@@ -11,9 +11,4 @@ namespace AdventureWorksSales.Web.Models
         public int HighestLineTotal { get; set; }
         public int FrontBrakeSalesTotal { get; set; }
     }
-
-    public class TotalSalesOrderCollection
-    {
-        public TotalSalesOrder TotalSalesOrder { get; set; }
-    }
 }

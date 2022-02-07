@@ -14,10 +14,11 @@ namespace AdventureWorksSales.Web.Controllers
     {
         public ActionResult Index()
         {
-            TotalSalesOrderCollection totalSalesOrderCollection = new TotalSalesOrderCollection();
+            TotalSalesOrder data = new TotalSalesOrder();
+
             try
             {
-                totalSalesOrderCollection.TotalSalesOrder = HomeModule.TotalOrdersAsync();
+                data = HomeModule.TotalOrdersAsync();
             }
             catch (Exception e)
             {
@@ -25,7 +26,7 @@ namespace AdventureWorksSales.Web.Controllers
                 throw e;
             }
 
-            return View(totalSalesOrderCollection);
+            return View(data);
         }
 
     }
